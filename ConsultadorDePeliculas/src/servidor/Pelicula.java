@@ -12,6 +12,11 @@ public class Pelicula {
 		this.director = director;
 		this.precio = precio;
 	}
+	public Pelicula(String titulo, String director, double precio) {
+		this.titulo = titulo;
+		this.director = director;
+		this.precio = precio;
+	}
 	public int getId() {
 		return id;
 	}

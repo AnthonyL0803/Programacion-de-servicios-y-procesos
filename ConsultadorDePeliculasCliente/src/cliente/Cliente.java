@@ -44,7 +44,7 @@ public class Cliente {
 					System.out.println("2.Consultar película por titulo");
 					System.out.println("3.Consultar película por director");
 					System.out.println("4.Agregar película");
-					System.out.println("5.Limpiar base de datos");
+					System.out.println("5.Mostrar tabla");
 					System.out.println("6.Salir de la aplicación");
 					int opcion = sc.nextInt();
 					sc.nextLine();
@@ -69,8 +69,6 @@ public class Cliente {
 						break;
 					case 4:
 						mensaje.append("4-");
-						System.out.print("Introduzca un id: ");
-						mensaje.append(sc.nextLine()).append("-");
 						System.out.print("Introduzca un titulo: ");
 						mensaje.append(sc.nextLine()).append("-");
 						System.out.print("Introduzca un director: ");
@@ -81,7 +79,7 @@ public class Cliente {
 						break;
 					case 5:
 						mensaje.append("5");
-						salida.println(mensaje);
+						salida.println(mensaje.toString().toUpperCase());
 						break;
 					case 6:
 						salida.println("FIN");
@@ -104,7 +102,7 @@ public class Cliente {
 									System.out.print(index1);
 									System.out.print(" ");
 								}
-								System.out.println("\n");
+								System.out.println("");
 							}
 						} else {
 							String[] respuesta1 = respuesta.split("-");

@@ -54,24 +54,23 @@ public class HiloPelicula implements Runnable {
 						salida.println(respuesta.toString().toLowerCase());
 					}
 					if(opcion == 2) {
-						String respuesta = daopeliculas.consultarPeliculaTitulo(textoRecibidoProcesado[1].toUpperCase());
+						String respuesta = daopeliculas.consultarPeliculaTitulo(textoRecibidoProcesado[1].toLowerCase());
 						salida.println(respuesta.toString().toLowerCase());
 					}
 					if(opcion == 3) {
-						String respuesta = daopeliculas.consultarPeliculaDirector(textoRecibidoProcesado[1].toUpperCase());
+						String respuesta = daopeliculas.consultarPeliculaDirector(textoRecibidoProcesado[1].toLowerCase());
 						salida.println(respuesta.toString().toLowerCase());
 					}
 					if(opcion == 4) {
-						int id = Integer.parseInt(textoRecibidoProcesado[1]);
-						double precio = Double.parseDouble(textoRecibidoProcesado[4]);
-						Pelicula pelicula = new Pelicula(id, textoRecibidoProcesado[2].toUpperCase(), textoRecibidoProcesado[3].toUpperCase(), precio);
+						double precio = Double.parseDouble(textoRecibidoProcesado[3]);
+						Pelicula pelicula = new Pelicula(textoRecibidoProcesado[1].toLowerCase(), textoRecibidoProcesado[2].toLowerCase(), precio);
 						System.out.println(pelicula);
 						daopeliculas.insertarPelicula(pelicula);
 						salida.println("La película se ha agregado con éxito.");
 					}
 					if(opcion == 5) {
-						daopeliculas.limpiarTabla();
-						salida.println("Las películas se han borrado correctamente");
+						String respuesta = daopeliculas.mostrarTabla();
+						salida.println(respuesta.toString().toLowerCase());
 					}
 				}
 			}
